@@ -83,7 +83,7 @@ export default {
         {
           id: "listener_practice_color",
           condition: "color",
-          utterance: "La sciarpa blu",
+          utterance: "La cannuccia blu",
           image: "instructions/listener_practice_color.png"
         }
       ]
