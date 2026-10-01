@@ -1,26 +1,66 @@
 <template>
-  <Experiment title="magpie demo">
-    <InstructionScreen :title="'Welcome'">
-      This is a sample introduction screen.
-    </InstructionScreen>
+  <Experiment title="Awareness-Norming Experiment">
+
+    <InstructionsSpeaker />
+
+    <PracticeSpeaker />
+
+    <InstructionsListener />
+
+    <PracticeListener />
+
+    <InstructionsWithBack />
+
+
+    <GridTrial
+      v-for="trial in trials"
+      :key="`${trial.phase}-${trial.id}`"
+      :trial="trial"
+    />
+
+    <Questionnaire />
 
     <SubmitResultsScreen />
   </Experiment>
 </template>
 
 <script>
-import _ from 'lodash';
+
+
+import GridTrial from "./GridTrial.vue";
+import trials from "./trials";
+import InstructionsSpeaker from "./InstructionsSpeaker.vue";
+import InstructionsListener from "./InstructionsListener.vue";
+import InstructionsWithBack from "./InstructionsWithBack.vue";
+import PracticeSpeaker from "./PracticeSpeaker.vue";
+import PracticeListener from "./PracticeListener.vue";
+import Questionnaire from "./Questionnaire.vue";
+
+
 
 export default {
-  name: 'App',
-  data() {
-    return {};
+  name: "App",
+  components: {
+
+    InstructionsSpeaker,
+    PracticeSpeaker,
+    InstructionsListener,
+    PracticeListener,
+    InstructionsWithBack,
+    GridTrial,
+    Questionnaire
   },
-  computed: {
-    // Expose lodash to template code
-    _() {
-      return _;
-    }
+  data() {
+    return {
+      trials
+    };
   }
 };
 </script>
+
+<style>
+.experiment {
+  width: 1500px !important;
+  max-width: 95vw !important;
+}
+</style>
