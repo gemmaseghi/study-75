@@ -69,7 +69,7 @@ export default {
             </p>
 
             <p>
-              Nelle tue descrizioni <strong>non puoi usare indicazioni sulla posizione</strong> come "in alto a sinistra" o "in basso a destra".
+              Nelle tue descrizioni puoi nominare l'oggetto indicato dall'asterisco, ma <strong>non puoi usare indicazioni sulla sua posizione</strong>, come ad esempio "in alto a sinistra" o "in basso a destra".
             </p>
 
             <p>

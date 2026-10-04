@@ -36,8 +36,8 @@ const trials = [
     id: 4,
     phase: "training",
     condition: "baseline",
-    utterance: "La macchina",
-    item: "The small yellow car",
+    utterance: "La valigia",
+    item: "The big violet suitcase",
     image: "/stimuli/trial_04.png",
     greyCell: "bottomRight",
     correctAnswer: "topRight"
@@ -69,8 +69,8 @@ const trials = [
     id: 7,
     phase: "training",
     condition: "baseline",
-    utterance: "La valigia",
-    item: "The big violet suitcase",
+    utterance: "La macchina",
+    item: "The yellow car",
     image: "/stimuli/trial_07.png",
     greyCell: "bottomLeft",
     correctAnswer: "topLeft"
@@ -113,8 +113,8 @@ const trials = [
     id: 11,
     phase: "training",
     condition: "baseline",
-    utterance: "La macchina",
-    item: "The big red car",
+    utterance: "La sveglia",
+    item: "The small orange alarm clock",
     image: "/stimuli/trial_11.png",
     greyCell: "topRight",
     correctAnswer: "bottomRight"

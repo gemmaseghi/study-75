@@ -73,7 +73,7 @@ export default {
             </p>
 
             <p>
-              Dovrai prima selezionare l'oggetto che pensi Leo stia descrivendo e successivamente <strong>rispondere a una domanda indicando la tua risposta su una barra graduata</strong>. 
+              Dovrai prima selezionare l'oggetto che pensi Leo stia descrivendo e successivamente <strong>rispondere a una domanda su cosa Leo vede, indicando la tua risposta su una barra graduata</strong>. Quando rispondi alla domanda, tieni in considerazione anche le tue risposte precendenti. 
             </p>
 
             <p>

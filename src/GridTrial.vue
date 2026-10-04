@@ -38,7 +38,7 @@
       <div class="probe-space">
         <div v-if="response !== null" class="confidence-panel">
           <label :for="sliderId" class="confidence-question">
-            Quanto sei sicuro che Leo non veda l'oggetto nella cella grigia?
+            In generale, quanto sei sicuro che Leo non veda il contenuto della cella grigia?
           </label>
 
           <div class="slider-container">
