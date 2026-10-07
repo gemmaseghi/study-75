@@ -38,7 +38,7 @@
       <div class="probe-space">
         <div v-if="response !== null" class="confidence-panel">
           <label :for="sliderId" class="confidence-question">
-            In generale, quanto sei sicuro che Leo non veda il contenuto della cella grigia?
+            Leo vede il contenuto della cella grigia?
           </label>
 
           <div class="slider-container">
@@ -68,8 +68,8 @@
               :id="`${sliderId}-endpoints`"
               class="slider-endpoints"
             >
-              <span>Per nulla sicuro</span>
-              <span>Estremamente sicuro</span>
+              <span>Sicuramente no</span>
+              <span>Sicuramente sì</span>
             </div>
           </div>
 
@@ -91,6 +91,8 @@
 </template>
 
 <script>
+import confidenceState from "./confidenceState";
+
 export default {
   name: "GridTrial",
 
@@ -104,7 +106,8 @@ export default {
   data() {
     return {
       response: null,
-      confidence: 50,
+      confidence: confidenceState.lastConfidence,
+      initialConfidence: confidenceState.lastConfidence,
       sliderMoved: false,
 
       ready: false,
@@ -204,7 +207,7 @@ export default {
 
       // Moving away from 50 unlocks Next.
       // Returning to 50 afterward is allowed.
-      if (!this.sliderMoved && value !== 50) {
+      if (!this.sliderMoved && value !== this.initialConfidence) {
         this.sliderMoved = true;
         this.firstSliderMovementRT =
           performance.now() - this.confidenceStartTime;
@@ -215,13 +218,17 @@ export default {
       if (
         this.finished ||
         this.response === null ||
+        this.confidenceStartTime === null ||
         !this.sliderMoved
       ) {
         return;
       }
 
-      this.finished = true;
       const now = performance.now();
+
+      this.finished = true;
+      confidenceState.lastConfidence = this.confidence;
+
 
       this.$magpie.addTrialData({
         trial_id: this.trial.id,
@@ -230,6 +237,8 @@ export default {
         utterance: this.trial.utterance,
         item: this.trial.item,
         image: this.trial.image,
+        initial_confidence: this.initialConfidence,
+        confidence_change: this.confidence - this.initialConfidence,
 
         grey_cell: this.trial.greyCell,
         correct_answer: this.trial.correctAnswer,

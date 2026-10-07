@@ -69,21 +69,42 @@ export default {
           title: "Il gioco",
           text: `
             <p>
-              A partire dalla prossima schermata, <strong>Leo</strong> assumerà il ruolo di parlante e tu assumerai il ruolo di ascoltatore.
+              A partire dalla prossima schermata, <strong>Leo</strong> assumerà
+              il ruolo di parlante e tu assumerai il ruolo di ascoltatore.
             </p>
 
             <p>
-              Dovrai prima selezionare l'oggetto che pensi Leo stia descrivendo e successivamente <strong>rispondere a una domanda su cosa Leo vede, indicando la tua risposta su una barra graduata</strong>. Quando rispondi alla domanda, tieni in considerazione anche le tue risposte precendenti. 
+              In ogni turno, dovrai prima selezionare l'oggetto che pensi Leo
+              stia descrivendo. Successivamente, dovrai <strong>rispondere a
+              una domanda su cosa vede Leo, spostando il cursore su una
+              barra graduata</strong>.
             </p>
 
             <p>
-              Una volta che hai selezionato l'oggetto e risposto alla domanda, clicca sul pulsante "Avanti" per passare alla griglia successiva.
+              Nel primo turno, il cursore sarà posizionato sul valore 50.
+              Nei turni successivi, partirà dal valore che hai confermato
+              nel turno precedente. Potrai quindi aggiornare la tua risposta
+              oppure mantenere lo stesso valore.
             </p>
 
             <p>
-              <strong>Alla fine del gioco dovrai rispondere a un breve questionario.</strong>
+              <strong>Per confermare la risposta, dovrai sempre spostare
+              il cursore.</strong> Se vuoi mantenere il valore di partenza,
+              sposta il cursore su un altro valore e poi riportalo su quello
+              iniziale. Verrà registrato il valore su cui si trova il cursore
+              quando clicchi su "Avanti".
             </p>
 
+            <p>
+              Il pulsante <strong>"Avanti"</strong> comparirà dopo che avrai
+              spostato il cursore. Quando sei soddisfatto della tua risposta,
+              cliccalo per passare alla griglia successiva.
+            </p>
+
+            <p>
+              <strong>Alla fine del gioco dovrai rispondere a un breve
+              questionario.</strong>
+            </p>
           `
         },
       ]
